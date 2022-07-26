@@ -1,0 +1,121 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Syncfusion.Licensing/20.2.0.39": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.2.0.39",
+            "fileVersion": "20.2.0.39"
+          }
+        }
+      },
+      "Syncfusion.SfChart.WPF/20.2.0.39": {
+        "dependencies": {
+          "Syncfusion.Licensing": "20.2.0.39"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.SfChart.WPF.dll": {
+            "assemblyVersion": "20.2500.0.39",
+            "fileVersion": "20.2500.0.39"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/19.4.0.56": {
+        "dependencies": {
+          "Syncfusion.Licensing": "20.2.0.39"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.WPF.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF.Classic/19.4.0.56": {
+        "dependencies": {
+          "Syncfusion.Shared.WPF": "19.4.0.56"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Shared.WPF.Classic.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      },
+      "Syncfusion.Tools.WPF/19.4.0.56": {
+        "dependencies": {
+          "Syncfusion.Licensing": "20.2.0.39",
+          "Syncfusion.Shared.WPF": "19.4.0.56"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.WPF.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      },
+      "Syncfusion.Tools.WPF.Classic/19.4.0.56": {
+        "dependencies": {
+          "Syncfusion.Shared.WPF": "19.4.0.56",
+          "Syncfusion.Shared.WPF.Classic": "19.4.0.56",
+          "Syncfusion.Tools.WPF": "19.4.0.56"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/Syncfusion.Tools.WPF.Classic.dll": {
+            "assemblyVersion": "19.4500.0.56",
+            "fileVersion": "19.4500.0.56"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Syncfusion.Licensing/20.2.0.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yUdDx+UuphQHFixtiY+ymEu+O48rQ6qx8XQn7dU9qBG/ZCIjRGR42oBDWlY/igBoRP0g2ANAplZmUEx1cBehPw==",
+      "path": "syncfusion.licensing/20.2.0.39",
+      "hashPath": "syncfusion.licensing.20.2.0.39.nupkg.sha512"
+    },
+    "Syncfusion.SfChart.WPF/20.2.0.39": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TCDeVJqcgsaBgIahvPnFQmUxPwVyY4IucrmdKZ7ikuSkBzwACD9872AOUFrMy+gjZubFgUuxJ+7amtAKG9qGtw==",
+      "path": "syncfusion.sfchart.wpf/20.2.0.39",
+      "hashPath": "syncfusion.sfchart.wpf.20.2.0.39.nupkg.sha512"
+    },
+    "Syncfusion.Shared.WPF/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M3jgmYvi/1jI+XC1JTogMv8+BCxJpN7Gz+4Nwojvou+qwhgnmyFFC3hrYqXaEiAEIaL5grARA+SkrJfDDzG8EA==",
+      "path": "syncfusion.shared.wpf/19.4.0.56",
+      "hashPath": "syncfusion.shared.wpf.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Shared.WPF.Classic/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fBp8Y9Zn6SrDUuBoQNKee83/0mzTlnr97BU5XBa2F8tM/0R/NKdhK53EL6ubM25oEMS3GxNFe7+m62i8Oqx1Ng==",
+      "path": "syncfusion.shared.wpf.classic/19.4.0.56",
+      "hashPath": "syncfusion.shared.wpf.classic.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Tools.WPF/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hi0b3u8bIgTCUTqErXetZQVduEJvCib0qMRhkOeru1wFprWUk2C/ZHP4932R1OJQcQWPJixBpyARDm3iZSajpA==",
+      "path": "syncfusion.tools.wpf/19.4.0.56",
+      "hashPath": "syncfusion.tools.wpf.19.4.0.56.nupkg.sha512"
+    },
+    "Syncfusion.Tools.WPF.Classic/19.4.0.56": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tJ24vv4ObN4J5dlFbyQCa9vw6vk2k1cfW3xpijMrlCQ1gpfUsLSSPQt/D7YnV9UnTCZrGD5ih1z9Bq4th88dZQ==",
+      "path": "syncfusion.tools.wpf.classic/19.4.0.56",
+      "hashPath": "syncfusion.tools.wpf.classic.19.4.0.56.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+﻿<Application x:Class="Zoo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Zoo"
+             xmlns:views="clr-namespace:Zoo.Views"
+             xmlns:viewmodels="clr-namespace:Zoo.View_Models"
+             
+             StartupUri="Views/LoginView.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MenuViewModel}">
+            <views:Menu/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AnimalViewModel}">
+            <views:AnimalsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:EventsViewModel}">
+            <views:EventsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TicketsViewModel}">
+            <views:TicketsView/>
+        </DataTemplate>
+    </Application.Resources>
+   
+</Application>

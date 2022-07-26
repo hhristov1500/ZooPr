@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "IkvXDSRV44FO02ORBi5Qp4k9NYggqT3nZlFGDCY+L2jV5L1kjceXJHi1TZ+cDQ0uQbMVEKEhNaXOrFrmNRoulA==",
+  "success": true,
+  "projectFilePath": "D:\\Microinvest\\Zoo\\Zoo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.licensing\\20.2.0.39\\syncfusion.licensing.20.2.0.39.nupkg.sha512",
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.sfchart.wpf\\20.2.0.39\\syncfusion.sfchart.wpf.20.2.0.39.nupkg.sha512",
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.shared.wpf\\19.4.0.56\\syncfusion.shared.wpf.19.4.0.56.nupkg.sha512",
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.shared.wpf.classic\\19.4.0.56\\syncfusion.shared.wpf.classic.19.4.0.56.nupkg.sha512",
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.tools.wpf\\19.4.0.56\\syncfusion.tools.wpf.19.4.0.56.nupkg.sha512",
+    "C:\\Users\\hrist\\.nuget\\packages\\syncfusion.tools.wpf.classic\\19.4.0.56\\syncfusion.tools.wpf.classic.19.4.0.56.nupkg.sha512"
+  ],
+  "logs": []
+}

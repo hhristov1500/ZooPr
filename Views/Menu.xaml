@@ -1,0 +1,59 @@
+﻿<Window x:Class="Zoo.Views.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:viewmodels="clr-namespace:Zoo.View_Models"
+        xmlns:local="clr-namespace:Zoo.Views"
+        mc:Ignorable="d"
+        Title="Menu" Height="600" Width="900">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Pictures/zoo5.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Content="Животни" Command="{Binding UpdateViewCommand}" CommandParameter="Animals" Background="#FF1BAD82" Width="170" Height="60" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="2" Content="Събития" Command="{Binding UpdateViewCommand}" CommandParameter="Events" Background="#FF1BAD82" Width="170" Height="60" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Grid.Column="3" Content="Билети" Command="{Binding UpdateViewCommand}" CommandParameter="Tickets" Background="#FF1BAD82" Width="170" Height="60" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        
+
+        <TextBlock Grid.Row="0" Margin="30,30,30,0" HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="Sofia Zoo" VerticalAlignment="Top" FontSize="38" Grid.Column="1" Width="296" TextAlignment="Center" FontFamily="Sitka Heading" Foreground="#FFFF8000"/>
+        <ContentControl Grid.Row="2" Content="{Binding SelectedViewModel}"/>
+    </Grid>
+</Window>
