@@ -28,5 +28,6 @@ namespace Zoo.Models
         [ForeignKey("Category")]
         public int IdCat { get; set; }
         public virtual Category Category { get; set; }
+        //
     }
 }
