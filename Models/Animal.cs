@@ -18,11 +18,15 @@ namespace Zoo.Models
         private int _categoryId;
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get;set; }
         public String Name { get; set; }
         public String Description { get; set; }
         public byte[] Picture { get; set; }
-        [ForeignKey(nameof(Category))]
-        public int CategoryID { get;set; }
-}
+       /* [ForeignKey("Category")]
+        public int IdCat { get;set; }*/
+        [ForeignKey("Category")]
+        public int IdCat { get; set; }
+        public virtual Category Category { get; set; }
+    }
 }

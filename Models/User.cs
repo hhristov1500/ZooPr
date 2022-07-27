@@ -10,7 +10,7 @@ namespace Zoo.Models
     public class User
     {
         [Key]
-        public int Id { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
 

@@ -48,3 +48,5 @@ D:\Microinvest\Zoo\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
 D:\Microinvest\Zoo\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
 D:\Microinvest\Zoo\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Microinvest\Zoo\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.Migrations.InitialCreate.resources
+D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.csproj.GenerateResource.cache

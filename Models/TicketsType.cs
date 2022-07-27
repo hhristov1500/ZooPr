@@ -10,7 +10,7 @@ namespace Zoo.Models
     public class TicketsType
     {
         [Key]
-        public int Id { get; set; }
+        public int IdTypeTicket { get; set; }
         public string Type { get; set; }
     }
 }

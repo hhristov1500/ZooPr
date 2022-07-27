@@ -10,7 +10,7 @@ namespace Zoo.Models
     public class EventsType
     {
         [Key]
-        public int Id { get; set; }
+        public int IdType { get; set; }
         public string Type { get; set; }
 
     }
