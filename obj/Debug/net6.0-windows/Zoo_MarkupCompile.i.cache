@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Microinvest\Zoo\App.xaml
-6-372138231
+7290093049
 
-181958771843
-200-1098413152
-MainView.xaml;Views\AnimalsView.xaml;Views\EventsView.xaml;Views\LoginView.xaml;Views\Menu.xaml;Views\TicketsView.xaml;
+281945192363
+203-1944582325
+Views\AnimalsView.xaml;Views\EventsView.xaml;Views\LoginView.xaml;Views\Menu.xaml;Views\Page1.xaml;Views\TicketsView.xaml;Views\Window1.xaml;
 
 False
 

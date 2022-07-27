@@ -18,7 +18,7 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <ComboBox HorizontalAlignment="Left" Margin="35,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="175" Height="30"/>
-        <Button Grid.Row="2" Content="Купи" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="664,217,76,27"/>
+        <Button Grid.Row="2" Content="Купи" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="660,100,75,-70"/>
 
         <TextBlock Grid.Row="0" Margin="30,5,30,0" HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="Билети" VerticalAlignment="Top" FontSize="36" Grid.Column="1" Width="296" TextAlignment="Center" FontFamily="Sitka Heading" Foreground="#FFFF8000"/>
 
@@ -27,7 +27,7 @@
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Тип">
                     <GridViewColumn DisplayMemberBinding="{Binding Name}"
                                     Header="Тип на билета" Width="120" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Manufacturer}"  Header="Цена" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}"  Header="Цена" Width="80"/>
 
 
 
@@ -35,9 +35,9 @@
             </ListView.View>
         </ListView>
 
-        <syncfusion:UpDown HorizontalAlignment="Left" Height="30" Margin="35,10,0,0" NullValueText="Enter your weight:" Grid.Row="2" UseNullOption="True" VerticalAlignment="Top" Width="175" Culture="en-US"/>
-        <Button Grid.Row="2" Content="Добави" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="60,65,680,180"/>
-        <TextBlock HorizontalAlignment="Left" Background="#FF1BAD82" Margin="664,155,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="160"/>
+        <syncfusion:UpDown NumberDecimalDigits="0" MinValue="0"  HorizontalAlignment="Left" Height="30" Margin="35,10,0,0" NullValueText="Enter your weight:" Grid.Row="2" UseNullOption="True" VerticalAlignment="Top" Width="175" Culture="en-US"/>
+        <Button Grid.Row="2" Content="Добави" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="60,-80,680,0"/>
+        <TextBlock HorizontalAlignment="Left" Background="#FF1BAD82" Margin="660,155,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="160"/>
         <Label Content="Крайна цена:" HorizontalAlignment="Left" Margin="664,119,0,0" VerticalAlignment="Top" FontSize="16" Grid.Row="2"/>
 
     </Grid>

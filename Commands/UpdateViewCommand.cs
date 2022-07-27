@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Zoo.View_Models;
 
@@ -26,10 +27,13 @@ namespace Zoo.Commands
 
         public void Execute(object parameter)
         {
+            
             switch (parameter)
             {
                 case "Menu":
-                    viewModel.SelectedViewModel = new MenuViewModel();
+                    if (viewModel.Username == viewModel.User.Name)
+                        viewModel.SelectedViewModel = new MenuViewModel();
+                    else MessageBox.Show("Грешни данни");
                     break;
                 case "Animals":
                     viewModel.SelectedViewModel = new AnimalViewModel();
@@ -40,13 +44,18 @@ namespace Zoo.Commands
 
                     break;
                 case "Tickets":
-                    viewModel.SelectedViewModel = new TicketsViewModel();
+                    viewModel.SelectedViewModel = new TicketsViewModel(viewModel.User);
 
                     break;
                 default:
                     break;
             }
             
+        }
+        public bool ValidateLogin()
+        {
+           /// if(viewModel.SelectedViewModel == null)
+            return false;
         }
     }
 }

@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MainView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\AnimalsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,14 +19,17 @@
     <Compile Update="Views\Menu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Page1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TicketsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Window1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\AnimalsView.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -42,7 +42,13 @@
     <Page Update="Views\Menu.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Page1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\TicketsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Window1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
