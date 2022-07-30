@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Zoo.Models;
 using Zoo.View_Models;
 
 namespace Zoo.Commands
@@ -12,10 +14,11 @@ namespace Zoo.Commands
     public class UpdateViewCommand : ICommand
     {
         private MainViewModel viewModel;
-
+        private User sUser;
         public UpdateViewCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
+            //this.sUser = user;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -31,9 +34,10 @@ namespace Zoo.Commands
             switch (parameter)
             {
                 case "Menu":
-                    if (viewModel.Username == viewModel.User.Name)
+                    //ValidateLogin();
+                   
                         viewModel.SelectedViewModel = new MenuViewModel();
-                    else MessageBox.Show("Грешни данни");
+                   
                     break;
                 case "Animals":
                     viewModel.SelectedViewModel = new AnimalViewModel();
@@ -44,18 +48,21 @@ namespace Zoo.Commands
 
                     break;
                 case "Tickets":
-                    viewModel.SelectedViewModel = new TicketsViewModel(viewModel.User);
-
-                    break;
+                   
+                        viewModel.SelectedViewModel = new TicketsViewModel(sUser);
+                        break;
                 default:
                     break;
             }
             
         }
-        public bool ValidateLogin()
+        /*public void ValidateLogin()
         {
-           /// if(viewModel.SelectedViewModel == null)
-            return false;
-        }
+            
+         sUser = viewModel.Users.Find(u => u.Name == viewModel.Username && viewModel.Password == u.Password);
+            
+            
+            
+        }*/
     }
 }

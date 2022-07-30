@@ -10,6 +10,5 @@ namespace Zoo.View_Models
 {
     public class MenuViewModel : ViewModelBase
     {
-        
     }
 }

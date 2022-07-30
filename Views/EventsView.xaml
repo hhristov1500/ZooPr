@@ -13,25 +13,29 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="150" Height="30"/>
-        <Button Grid.Row="1" Content="Търси" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="350,15,370,15"></Button>
+        <ComboBox ItemsSource="{Binding EventTypes}"
+                    DisplayMemberPath="Type" 
+                    SelectedItem="{Binding Path=SEventsType}"
+                    SelectedValuePath="Type"
+                     SelectedValue="{Binding Name, Mode=TwoWay}" FontSize="18" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="150" Height="30"/>
+        <Button Command="{Binding SearchEvents}" Grid.Row="1" Content="Търси" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="350,15,370,15"></Button>
         <TextBlock Grid.Row="0" Margin="30,5,30,0" HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="Събития" VerticalAlignment="Top" FontSize="36" Grid.Column="1" Width="296" TextAlignment="Center" FontFamily="Sitka Heading" Foreground="#FFFF8000"/>
 
-        <ListView Grid.Row="2" Background="#FF1BAD82" Margin="35,40,510,0"  >
+        <ListView ItemsSource="{Binding Events}" Grid.Row="2" Background="#FF1BAD82" Margin="35,40,510,0"  >
             <ListView.View>
                 <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Събития">
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"
                                     Header="Събитие" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Manufacturer}"  Header="Вид" Width="80"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Type}"  Header="Вид" Width="80"/>
 
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=SerialNumber}" Header="Дата" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Date}" Header="Дата" Width="110"/>
 
                 </GridView>
             </ListView.View>
         </ListView>
 
         <TextBlock HorizontalAlignment="Left" Background="#FF1BAD82" Margin="430,40,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="220" Width="330"/>
-        <DatePicker HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="150" FontSize="16"/>
+        <DatePicker  SelectedDate="{Binding SDate}" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="150" FontSize="16"/>
 
     </Grid>
 </UserControl>

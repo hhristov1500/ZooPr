@@ -12,5 +12,6 @@ namespace Zoo.Models
         [Key]
         public int IdTypeTicket { get; set; }
         public string Type { get; set; }
+        public double price { get; set; }
     }
 }
