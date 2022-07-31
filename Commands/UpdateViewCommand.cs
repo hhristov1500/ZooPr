@@ -14,11 +14,11 @@ namespace Zoo.Commands
     public class UpdateViewCommand : ICommand
     {
         private MainViewModel viewModel;
-        public int UserId { get; set; }
+        
         public UpdateViewCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
-            
+          
         }
 
         public event EventHandler CanExecuteChanged;
@@ -33,9 +33,11 @@ namespace Zoo.Commands
             //choose which view to be displayed by parameter 
             switch (parameter)
             {
+                
                 case "Menu":
                    
                         viewModel.SelectedViewModel = new MenuViewModel();
+                    
                             
                     break;
                 case "Animals":
@@ -48,12 +50,19 @@ namespace Zoo.Commands
                     break;
                 case "Tickets":
                    
-                        viewModel.SelectedViewModel = new TicketsViewModel(UserId);
+                        viewModel.SelectedViewModel = new TicketsViewModel();
                         break;
                 default:
                     break;
             }
             
+
         }
+        /*public int validateUser()
+        {
+            if (Username != null && Password != null)
+                return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
+            return 0;
+        }*/
     }
 }

@@ -27,10 +27,10 @@ namespace Zoo.View_Models
         private ICommand _displayTicketsOnTable;
         
         public double FinalPrice { get { return _finalPrice; } set { _finalPrice = value; OnPropertyChanged("FinalPrice"); } }
-        public TicketsViewModel(int userId)
+        public TicketsViewModel()
         {
             DisplayTicketsType();
-            currUserId = userId;
+            
             _ticketsList = new List<Ticket>();
             FinalPrice = 0;
         }
@@ -42,7 +42,7 @@ namespace Zoo.View_Models
         }
 
 
-        /* public ICommand SaveTicketsToDb //not done yet
+        /* public ICommand SaveTicketsToDb //TODO...
          {
              get
              {
@@ -51,17 +51,12 @@ namespace Zoo.View_Models
          }*/
         public void SaveAction()
         {
-            //not done yet
+            //TODO...
             /*if (TicketsList.Count != 0)
             {
                 for(int i = 0; i < TicketsList.Count; i++)
                 {
-                    UserOrdercs order = new UserOrdercs();
-                    order.IdUser = currUser.IdUser;
-                    if(TicketsList[i].Type=="Индивидуален")
-                    order.IdTypeTicket = 1;
-                    zooDbContext.UserOrdercs.Add(order);
-                    zooDbContext.SaveChanges();
+                    
                 }
                 
             }*/

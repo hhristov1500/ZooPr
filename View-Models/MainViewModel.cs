@@ -18,14 +18,13 @@ namespace Zoo.View_Models
     {
         public ZooDbContext dBContext = new ZooDbContext();
         private string _username;
-        private String _password;
+        private string _password;
         private ViewModelBase _selectedViewModel;
         private List<User> _users;
         public User currentUser;
         public List<User> Users { get; set; }
-        //private ICommand _loginCommand;
-       // public ICommand _updateView;
-        public String Password
+     
+        public string Password
         {
             get { return _password; }
             set
@@ -38,7 +37,7 @@ namespace Zoo.View_Models
             }
         }
 
-        public string Username { get { return _username; } set { _username = value; } }
+        public string Username { get { return _username; } set { _username = value; OnPropertyChanged("Username"); } }
 
 
         public ViewModelBase SelectedViewModel
@@ -52,12 +51,7 @@ namespace Zoo.View_Models
         }
         
 
-        public int validateUser()
-        {
-            
-            return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
-            
-        }
+        
 
         public ICommand UpdateViewCommand { get; set; }
 

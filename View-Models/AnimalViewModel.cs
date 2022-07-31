@@ -33,7 +33,7 @@ namespace Zoo.View_Models
             }
         }
         
-
+        
         public void SearchAnimalAction()
         {
             if (SCategory == null)
