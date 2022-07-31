@@ -14,11 +14,11 @@ namespace Zoo.Commands
     public class UpdateViewCommand : ICommand
     {
         private MainViewModel viewModel;
-        private User sUser;
+        public int UserId { get; set; }
         public UpdateViewCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
-            //this.sUser = user;
+            
         }
 
         public event EventHandler CanExecuteChanged;
@@ -30,14 +30,13 @@ namespace Zoo.Commands
 
         public void Execute(object parameter)
         {
-            
+            //choose which view to be displayed by parameter 
             switch (parameter)
             {
                 case "Menu":
-                    //ValidateLogin();
                    
                         viewModel.SelectedViewModel = new MenuViewModel();
-                   
+                            
                     break;
                 case "Animals":
                     viewModel.SelectedViewModel = new AnimalViewModel();
@@ -49,20 +48,12 @@ namespace Zoo.Commands
                     break;
                 case "Tickets":
                    
-                        viewModel.SelectedViewModel = new TicketsViewModel(sUser);
+                        viewModel.SelectedViewModel = new TicketsViewModel(UserId);
                         break;
                 default:
                     break;
             }
             
         }
-        /*public void ValidateLogin()
-        {
-            
-         sUser = viewModel.Users.Find(u => u.Name == viewModel.Username && viewModel.Password == u.Password);
-            
-            
-            
-        }*/
     }
 }

@@ -11,17 +11,14 @@ namespace Zoo.Models
     public class UserOrdercs
     {
         [Key]
-        /*public int Id { get; set; }
-        [ForeignKey(nameof(User))]*/
-        // public int UserId { get; set; }
-
-        [ForeignKey("User")]
+        public int Id { get; set; }
+        [ForeignKey(nameof(User))]
         public int IdUser { get; set; }
-        public virtual User User { get; set; }
-        [ForeignKey("TicketsType" )]
+        [ForeignKey(nameof(TicketsType))]
         public int IdTypeTicket { get; set; }
-        public virtual TicketsType TicketsType { get; set; }
-        
 
+        public virtual TicketsType TicketsType { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

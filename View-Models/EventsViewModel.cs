@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.Windows.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,58 +15,69 @@ namespace Zoo.View_Models
         private ZooDbContext zooDbContext = new ZooDbContext();
         private List<EventsType> _eventTypes;
         private EventsType _sEventsType;
-        private List<Event> _events;
+        private List<EventToDisplay> _events;
         private DateTime? _sDate=null;
         private ICommand _searchEvents;
-
+        private EventToDisplay _sEvent;
+        
         public ICommand SearchEvents
         {
             get
             {
-                return _searchEvents ?? (_searchEvents = new CommandHandler(() => SearchAction(), () => CanExecute));
+                return _searchEvents ?? (_searchEvents = new DelegateCommand(context =>
+                {
+                    SearchAction();
+                }));
             }
         }
-        public bool CanExecute
-        {
-            get
-            {
-                return true;
-            }
-        }
+        
 
         public void SearchAction()
         {
+            //checks if date is null or not and checks if the type for event chosen by the user is null or not
+            //then selects the events by the condition
             if (SDate != null && SEventsType == null)
             {
-                Events = zooDbContext.Event.Where(e => e.Date == SDate).
-              Select(e => e).ToList();
+                /*Events = zooDbContext.Event.Where(e => e.Date == SDate).
+              Select(e => e).ToList();*/
+                Events = (from Event in zooDbContext.Event
+                             join EventsType in zooDbContext.EventsType on Event.IdType equals EventsType.IdType
+                             where  Event.Date == SDate
+                             select new EventToDisplay() { Name = Event.Name, Description = Event.Description, Date = Event.Date, Type = EventsType.Type }).ToList();
+                
             }
             else if(SDate == null && SEventsType != null)
             {
-                Events = zooDbContext.Event.Where(e => e.IdType == SEventsType.IdType).
-                Select(e => e).ToList();
+                /*Events = zooDbContext.Event.Where(e => e.IdType == SEventsType.IdType).
+                Select(e => e).ToList();*/
+                Events = (from Event in zooDbContext.Event
+                             join EventsType in zooDbContext.EventsType on Event.IdType equals EventsType.IdType
+                             where Event.IdType == SEventsType.IdType 
+                             select new EventToDisplay() { Name = Event.Name, Description = Event.Description, Date = Event.Date, Type = EventsType.Type }).ToList();
+                
             }
             else if(SDate != null && SEventsType != null)
             {
-                Events = zooDbContext.Event.Where(e => e.IdType == SEventsType.IdType && e.Date == SDate).
-                     Select(e=>e).ToList();
-                /*Events =
-                (List<EventToDisplay>)(IEnumerable<EventToDisplay>)(from Event in zooDbContext.Event
-                join EventsType in zooDbContext.EventsType on Event.IdType equals EventsType.IdType
-                where Event.IdType == SEventsType.IdType && Event.Date == SDate
-                select new { Event.Name,Event.Date,EventsType.Type}).ToList();*/
-
-
+                /*Events = zooDbContext.Event.Where(e => e.IdType == SEventsType.IdType && e.Date == SDate).
+                     Select(e=>e).ToList();*/
+                Events  = (from Event in zooDbContext.Event
+                            join EventsType in zooDbContext.EventsType on Event.IdType equals EventsType.IdType
+                            where Event.IdType == SEventsType.IdType && Event.Date == SDate
+                            select new EventToDisplay(){Name=Event.Name,Description=Event.Description,Date=Event.Date, Type=EventsType.Type }).ToList();
+              
             }
             else
             {
-                Events = zooDbContext.Event.
-                  Select(e => e).ToList();
+                Events = (from Event in zooDbContext.Event
+                             join EventsType in zooDbContext.EventsType on Event.IdType equals EventsType.IdType
+                             select new EventToDisplay() { Name = Event.Name, Description = Event.Description, Date = Event.Date, Type = EventsType.Type }).ToList();
+                
             }
         }
 
             public void DisplayEventType()
         {
+            //Displays all types of events in combobox
             EventTypes = zooDbContext.EventsType.Select(t => t).ToList();
         }
 
@@ -88,7 +100,7 @@ namespace Zoo.View_Models
                 OnPropertyChanged("SDate");
             }
         }
-        public List<Event> Events
+        public List<EventToDisplay> Events
         {
             get { return _events; }
             set {
@@ -96,7 +108,16 @@ namespace Zoo.View_Models
                OnPropertyChanged("Events");
             }
         }
-        
+        public EventToDisplay SEvent
+        {
+            get
+            {
+                return _sEvent;
+            }
+            set { _sEvent = value;
+                OnPropertyChanged("SEvent");
+            }
+        }
         public List<EventsType> EventTypes
         {
             get { return _eventTypes; }

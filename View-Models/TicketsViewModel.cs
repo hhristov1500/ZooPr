@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.Windows.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,36 +21,38 @@ namespace Zoo.View_Models
         private Ticket ticket;
         private double _sValue;
         private double _finalPrice;
-        private User currUser;
+        private int currUserId;
 
         private ICommand _saveTicketsToDb;
         private ICommand _displayTicketsOnTable;
         
         public double FinalPrice { get { return _finalPrice; } set { _finalPrice = value; OnPropertyChanged("FinalPrice"); } }
-        public TicketsViewModel(User user)
+        public TicketsViewModel(int userId)
         {
             DisplayTicketsType();
-            currUser = user;
+            currUserId = userId;
             _ticketsList = new List<Ticket>();
             FinalPrice = 0;
         }
         
         public void DisplayTicketsType()
         {
+            //displays all types of tickets in a combobox
             TicketsTypes = zooDbContext.TicketsType.Select(t => t).ToList(); 
         }
-        
 
-        public ICommand SaveTicketsToDb
-        {
-            get
-            {
-                return _saveTicketsToDb ?? (_saveTicketsToDb = new CommandHandler(() => SaveAction(), () => CanExecute));
-            }
-        }
+
+        /* public ICommand SaveTicketsToDb //not done yet
+         {
+             get
+             {
+                 return _saveTicketsToDb ?? (_saveTicketsToDb = new DelegateCommand(context => SaveAction()));
+             }
+         }*/
         public void SaveAction()
         {
-            if (TicketsList.Count != 0)
+            //not done yet
+            /*if (TicketsList.Count != 0)
             {
                 for(int i = 0; i < TicketsList.Count; i++)
                 {
@@ -61,28 +64,15 @@ namespace Zoo.View_Models
                     zooDbContext.SaveChanges();
                 }
                 
-            }
+            }*/
         }
-
-
-
-
-
         public ICommand DisplayTicketsOnTable
         {
             get
             {
-                return _displayTicketsOnTable ?? (_displayTicketsOnTable = new CommandHandler(() => MyAction(), () => CanExecute));
+                return _displayTicketsOnTable ?? (_displayTicketsOnTable = new DelegateCommand(context => MyAction()));
             }
         }
-        public bool CanExecute
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         public void MyAction()
         {
             if (SType != null){

@@ -34,7 +34,7 @@ D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Views\LoginView.baml
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Views\Menu.baml
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Views\TicketsView.baml
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.g.resources
-D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.Migrations.InitialCreate.resources
+D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.Migrations.InititalCreate.resources
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.csproj.GenerateResource.cache
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.GeneratedMSBuildEditorConfig.editorconfig
 D:\Microinvest\Zoo\obj\Debug\net6.0-windows\Zoo.AssemblyInfoInputs.cache

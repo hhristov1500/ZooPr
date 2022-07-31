@@ -23,6 +23,7 @@ namespace Zoo.Views
         {
             InitializeComponent();
         }
+        //passwordbox binding is not allowed by security reasons so code-behind is used
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e) 
         { 
             if (this.DataContext != null) 

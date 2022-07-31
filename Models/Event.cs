@@ -14,9 +14,10 @@ namespace Zoo.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
-        public string Description;
-        [ForeignKey("EventsType")]
+        public string Description { get; set; }
+        [ForeignKey(nameof(EventsType))]
         public int IdType { get; set; }
         public virtual EventsType EventsType { get; set; }
+        
     }
 }

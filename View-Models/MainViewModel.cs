@@ -50,65 +50,15 @@ namespace Zoo.View_Models
                 OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
-        /*public ICommand UpdateView
+        
+
+        public int validateUser()
         {
-            get
-            {
-                return _updateView ?? (_updateView = new CommandHandler(() => updateAction(), () => CanExecute));
-            }
-
-        }
-    public void updateAction()
-        {
-
-            SelectedViewModel = new TicketsViewModel(currentUser);
-
-                    
+            
+            return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
             
         }
-        public ICommand LoginCommand
-        {
-            get
-            {
-                return _loginCommand ?? (_loginCommand = new CommandHandler(() => LoginAction(), () => CanExecute));
-            }
-        }
-        public bool CanExecute
-        {
-            get
-            {
-                return true;
-            }
-        }
-        public void LoginAction()
-        {
-            if (String.IsNullOrEmpty(this.Username))
-            {
-                MessageBox.Show("Моля въведете име!");
-            }
-            else if (String.IsNullOrEmpty(this.Password))
-            {
-                MessageBox.Show("Моля въведете парола!");
-            }
-            else
-            {
 
-                currentUser = dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password);
-
-                if (currentUser == null)
-                {
-                    MessageBox.Show("Грешни данни за вход!");
-                }
-                else
-                {
-                    SelectedViewModel = new MenuViewModel();
-                    //UpdateViewCommand = new UpdateViewCommand(this,currentUser);
-                }
-
-            }
-        
-        }
-       */
         public ICommand UpdateViewCommand { get; set; }
 
         public MainViewModel()
