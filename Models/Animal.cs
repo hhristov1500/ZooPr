@@ -11,18 +11,30 @@ namespace Zoo.Models
     public class Animal
     {
         
-        private int _id;
-        private String _name;
-        private String _description;
-        private byte[] _picture;
-        private int _categoryId;
+       
+        public Animal()
+        {
+
+        }
+        public Animal(string name, string description, byte[] picture, int categoryId)
+        {
+            
+            Name = name;
+            Description = description;
+            Picture = picture;
+            IdCat = categoryId;
+        }
 
         [Key]
+        
         public int Id { get;set; }
         public String Name { get; set; }
         public String Description { get; set; }
         public byte[] Picture { get; set; }
         [ForeignKey(nameof(Category))]
-        public int CategoryID { get;set; }
-}
+        public int IdCat { get; set; }
+        public virtual Category Category { get; set; }
+
+
+    }
 }

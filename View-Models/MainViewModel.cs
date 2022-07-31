@@ -1,24 +1,45 @@
 ﻿using Syncfusion.Windows.Shared;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Zoo.Commands;
+using Zoo.Data;
 using Zoo.Models;
 
 namespace Zoo.View_Models
 {
     public class MainViewModel : ViewModelBase
     {
-        private string username;
-        private string password;
-        private User user = new User("Ivan");
-        
-        public User User { get { return user; } }
-        public string Username { get { return username; } set { username = value; } }
+        public ZooDbContext dBContext = new ZooDbContext();
+        private string _username;
+        private string _password;
         private ViewModelBase _selectedViewModel;
+        private List<User> _users;
+        public User currentUser;
+        public List<User> Users { get; set; }
+     
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                if (value != null)
+                {
+                    _password = value;
+                    OnPropertyChanged("Password");
+                }
+            }
+        }
+
+        public string Username { get { return _username; } set { _username = value; OnPropertyChanged("Username"); } }
+
+
         public ViewModelBase SelectedViewModel
         {
             get { return _selectedViewModel; }
@@ -28,12 +49,17 @@ namespace Zoo.View_Models
                 OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
+        
+
+        
 
         public ICommand UpdateViewCommand { get; set; }
 
         public MainViewModel()
         {
             UpdateViewCommand = new UpdateViewCommand(this);
+
+
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using Zoo.Models;
 using Zoo.View_Models;
 
 namespace Zoo.Commands
@@ -12,10 +14,11 @@ namespace Zoo.Commands
     public class UpdateViewCommand : ICommand
     {
         private MainViewModel viewModel;
-
+        
         public UpdateViewCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
+          
         }
 
         public event EventHandler CanExecuteChanged;
@@ -27,13 +30,15 @@ namespace Zoo.Commands
 
         public void Execute(object parameter)
         {
-            
+            //choose which view to be displayed by parameter 
             switch (parameter)
             {
+                
                 case "Menu":
-                    if (viewModel.Username == viewModel.User.Name)
+                   
                         viewModel.SelectedViewModel = new MenuViewModel();
-                    else MessageBox.Show("Грешни данни");
+                    
+                            
                     break;
                 case "Animals":
                     viewModel.SelectedViewModel = new AnimalViewModel();
@@ -44,18 +49,20 @@ namespace Zoo.Commands
 
                     break;
                 case "Tickets":
-                    viewModel.SelectedViewModel = new TicketsViewModel(viewModel.User);
-
-                    break;
+                   
+                        viewModel.SelectedViewModel = new TicketsViewModel();
+                        break;
                 default:
                     break;
             }
             
+
         }
-        public bool ValidateLogin()
+        /*public int validateUser()
         {
-           /// if(viewModel.SelectedViewModel == null)
-            return false;
-        }
+            if (Username != null && Password != null)
+                return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
+            return 0;
+        }*/
     }
 }

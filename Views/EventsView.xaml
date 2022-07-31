@@ -6,32 +6,49 @@
         xmlns:local="clr-namespace:Zoo.Views"
         mc:Ignorable="d"
         d:DesignHeight="420" d:DesignWidth="860">
-    <Grid Background="LightGreen">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="20"></RowDefinition>
         </Grid.RowDefinitions>
-        <ComboBox HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="150" Height="30"/>
-        <Button Grid.Row="1" Content="Търси" Background="#FF1BAD82" Width="120" Height="30" FontSize="18" Margin="350,15,370,15"></Button>
-        <TextBlock Grid.Row="0" Margin="30,5,30,0" HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="Събития" VerticalAlignment="Top" FontSize="36" Grid.Column="1" Width="296" TextAlignment="Center" FontFamily="Sitka Heading" Foreground="#FFFF8000"/>
+        <ComboBox ItemsSource="{Binding EventTypes}"
+                    DisplayMemberPath="Type" 
+                    SelectedItem="{Binding Path=SEventsType}"
+                    SelectedValuePath="Type"
+                     SelectedValue="{Binding Name, Mode=TwoWay}" FontSize="20" HorizontalAlignment="Left" Margin="200,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="150" Height="35"/>
+        <Button Command="{Binding SearchEvents}" Grid.Row="1" Content="Търси" Width="120" Height="30" FontSize="20" Margin="350,15,370,15" Background="#FFC7C7C7"/>
+        <TextBlock Grid.Row="0" Margin="30,5,30,0" HorizontalAlignment="Center"  TextWrapping="NoWrap" Text="Събития" VerticalAlignment="Top" FontSize="36" Grid.Column="1" Width="170" TextAlignment="Center" FontFamily="Sitka Heading" Foreground="#FFFF8000" Height="45" Background="#FF269C1C"/>
+        <DatePicker  SelectedDate="{Binding SDate}" HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="35" Width="150" FontSize="20"/>
+        <GroupBox Header="Резултати" Grid.Row="2" Margin="35,0,0,18" HorizontalAlignment="Left" FontSize="16" VerticalAlignment="Bottom" Grid.RowSpan="2" Width="494" FontWeight="Bold" Foreground="#FFF56A6A">
+            <ListView ItemsSource="{Binding Events}" SelectedValue="{Binding SEvent}" FontSize="20" Height="219" Margin="5,5,5,5" FontWeight="Normal"  >
+                <ListView.View>
+                    <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Събития">
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}"
+                                    Header="Събитие"  Width="180"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Type}"  Header="Вид" Width="145"/>
 
-        <ListView Grid.Row="2" Background="#FF1BAD82" Margin="35,40,510,0"  >
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Събития">
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}"
-                                    Header="Събитие" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Manufacturer}"  Header="Вид" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Date}" Header="Дата" Width="140"/>
 
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=SerialNumber}" Header="Дата" Width="110"/>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-        <TextBlock HorizontalAlignment="Left" Background="#FF1BAD82" Margin="430,40,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Height="220" Width="330"/>
-        <DatePicker HorizontalAlignment="Left" Margin="35,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="30" Width="150" FontSize="16"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+        <GroupBox Height="254" Width="223" Header="Описание" Grid.Row="2"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,0" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FFF1F0F0">
+            <GroupBox.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9E9A9A" Offset="1"/>
+                    <GradientStop Color="Black" Offset="0.016"/>
+                    <GradientStop Color="Black" Offset="0.831"/>
+                </LinearGradientBrush>
+            </GroupBox.Foreground>
+            <TextBlock Text="{Binding SEvent.Description}" FontSize="20" HorizontalAlignment="Stretch" Margin="5,5,5,5" TextWrapping="Wrap" VerticalAlignment="Stretch">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="50" Color="White" ShadowDepth="0" />
+                </TextBlock.Effect>
+            </TextBlock>
+        </GroupBox>
 
     </Grid>
 </UserControl>

@@ -13,9 +13,12 @@ namespace Zoo.Models
         [Key]
         public int Id { get; set; }
         [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
+        public int IdUser { get; set; }
         [ForeignKey(nameof(TicketsType))]
-        public int TicketTypeId { get; set; }
+        public int IdTypeTicket { get; set; }
 
+        public virtual TicketsType TicketsType { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

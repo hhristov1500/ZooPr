@@ -60,7 +60,7 @@
                 <TextBlock TextWrapping="Wrap" Text="Username" TextAlignment="Left" Margin="20,10,232,15" FontSize="18"/>
                     <TextBox x:Name="UserNameInput" Text="{Binding Username}" TextWrapping="Wrap" Width="300" Height="30" Background="White" FontSize="18" Margin="0,-5,0,0"/>
                     <TextBlock  TextWrapping="Wrap" Text="Password"  TextAlignment="Left" Margin="20,20,232,15" FontSize="18"/>
-                    <PasswordBox Margin="0,-5,0,0" Height="30" Width="300" FontSize="18"/>
+                    <PasswordBox Margin="0,-5,0,0" Height="30" Width="300" FontSize="18" PasswordChanged="PasswordBox_PasswordChanged"/>
                 <Button Content="Вход" Height="30" Width="100" HorizontalAlignment="Right" Margin="0,15,50,0" Command="{Binding UpdateViewCommand}" CommandParameter="Menu"> </Button>
             </StackPanel>
         </Border>
