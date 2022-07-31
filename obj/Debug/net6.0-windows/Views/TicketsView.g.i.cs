@@ -60,7 +60,7 @@ namespace Zoo.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Zoo;V1.0.0.0;component/views/ticketsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Zoo;component/views/ticketsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\TicketsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

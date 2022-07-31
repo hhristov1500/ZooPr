@@ -49,10 +49,15 @@ namespace Zoo.View_Models
                 OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
-        
 
-        
 
+
+        public int  ValidateUser()
+        {
+            if (Username != null && Password != null)
+                return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
+            return 0;
+        }
         public ICommand UpdateViewCommand { get; set; }
 
         public MainViewModel()
