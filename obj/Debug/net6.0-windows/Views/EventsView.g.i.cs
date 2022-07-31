@@ -53,7 +53,7 @@ namespace Zoo.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Zoo;V1.0.0.0;component/views/eventsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Zoo;component/views/eventsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EventsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

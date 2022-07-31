@@ -77,7 +77,7 @@ namespace Zoo.View_Models
 
             public void DisplayEventType()
         {
-            //Displays all types of events in combobox
+            //Displays all types of events in a combobox
             EventTypes = zooDbContext.EventsType.Select(t => t).ToList();
         }
 

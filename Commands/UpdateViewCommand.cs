@@ -35,9 +35,9 @@ namespace Zoo.Commands
             {
                 
                 case "Menu":
-                   
+                    if(viewModel.ValidateUser()!=0)
                         viewModel.SelectedViewModel = new MenuViewModel();
-                    
+                    else { MessageBox.Show("Невалидни данни за вход"); }
                             
                     break;
                 case "Animals":
@@ -49,7 +49,7 @@ namespace Zoo.Commands
 
                     break;
                 case "Tickets":
-                   
+                    
                         viewModel.SelectedViewModel = new TicketsViewModel();
                         break;
                 default:
@@ -58,11 +58,6 @@ namespace Zoo.Commands
             
 
         }
-        /*public int validateUser()
-        {
-            if (Username != null && Password != null)
-                return dBContext.User.FirstOrDefault(u => u.Name == this.Username && u.Password == this.Password).IdUser;
-            return 0;
-        }*/
+        
     }
 }
